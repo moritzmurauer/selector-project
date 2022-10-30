@@ -10,11 +10,15 @@
 }
 /* variables */
 :root {
-  --primary: #11224d;
+  --primary: #00122c;
   --secondary: #f98125;
   --third: #fb9b50;
   --quad: #2c599d;
   --warning: #da0f41;
+}
+
+body {
+  background-color: #fffef6;
 }
 
 .white {
@@ -76,6 +80,14 @@ h4 {
   font-size: 24px;
 }
 
+.cooper {
+  font-family: "CooperLight";
+}
+
+.neue-haas {
+  font-family: "NeueHaas";
+}
+
 .chip {
   display: inline-block;
   padding: 5px 10px;
@@ -85,17 +97,16 @@ h4 {
   transition: all ease 0.2s;
 }
 
-/* buttons */
 button,
 .btn {
-  background: var(--secondary);
-  border-radius: 8px;
+  background: var(--primary);
   color: white;
   border: 0;
   padding: 12px 18px;
   cursor: pointer;
   display: inline-block;
 }
+
 button:hover,
 .btn:hover {
   background: var(--primary);
