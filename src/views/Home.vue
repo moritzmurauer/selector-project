@@ -2,14 +2,15 @@
   <div class="home">
     <Navbar />
     <div class="header content">
-      <h1 class="text-4xl">
-        Wir stehen nicht <br />auf der <span class="secondary">Leitung.</span>
+      <h1 class="text-4xl w-96 leading-tight">
+        Handselected art from indonesian based artists.
       </h1>
       <p>
         An absolute random example of some text <br />
         together to make it look like someone <br />
         has written something meaningful already.
       </p>
+      <button class="btn rounded-full">Kontaktieren Sie uns</button>
       <button>Kontaktieren Sie uns</button>
     </div>
   </div>
@@ -69,6 +70,7 @@ export default {
 </script>
 
 <style scoped>
+/*
 .home {
   height: 100vh;
   max-width: 100%;
@@ -77,6 +79,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
+*/
 
 .header {
   margin-top: 6rem;
