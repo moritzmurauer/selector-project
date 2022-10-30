@@ -18,7 +18,7 @@
           <span>Hi there, {{ user.displayName }}</span>
         </div>
         <div v-else>
-          <button class="rounded-full">
+          <button class="btn-outline rounded-full">
             Get in touch
           </button>
         </div>

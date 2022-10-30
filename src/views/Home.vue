@@ -1,17 +1,24 @@
 <template>
   <div class="home">
     <Navbar />
-    <div class="header content">
-      <h1 class="text-4xl w-96 leading-tight">
-        Handselected art from indonesian based artists.
-      </h1>
-      <p>
-        An absolute random example of some text <br />
-        together to make it look like someone <br />
-        has written something meaningful already.
-      </p>
-      <button class="btn rounded-full">Kontaktieren Sie uns</button>
-      <button>Kontaktieren Sie uns</button>
+    <div class="flex content">
+      <div class="mt-24 space-y-6">
+        <h1 class="text-4xl w-80 leading-tight">
+          Handselected art from indonesian based artists.
+        </h1>
+        <p class="leading-relaxed">
+          An absolute random example of some text <br />
+          together to make it look like someone <br />
+          has written something meaningful already.
+        </p>
+        <div class="mt-8">
+          <button class="btn-full rounded-full mr-4 px-8">explore</button>
+          <button class="btn-outline rounded-full">contribute</button>
+        </div>
+      </div>
+      <div>
+        <img class="mt-16" src="../assets/imgs/header-selector.png" alt="img" />
+      </div>
     </div>
   </div>
 
@@ -74,25 +81,12 @@ export default {
 .home {
   height: 100vh;
   max-width: 100%;
-  background-image: url("../assets/imgs/background-header.jpg");
+  background-image: url("../assets/imgs/header-selector.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 */
-
-.header {
-  margin-top: 6rem;
-}
-
-.header h1 {
-  text-transform: uppercase;
-}
-
-.header p {
-  margin: 20px 0;
-  line-height: 200%;
-}
 
 .attributes {
   margin-top: 6rem;
