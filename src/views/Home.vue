@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <Navbar />
     <div class="flex content">
       <div class="mt-24 space-y-6">
         <h1 class="text-4xl w-80 leading-tight">
@@ -22,10 +21,23 @@
     </div>
   </div>
 
-  <div class="attributes content">
-    <Attributes />
+  <div class="categories content mt-10">
+    <Categories />
   </div>
 
+  <div class="creator content mt-64">
+    <Creator />
+  </div>
+
+  <div class="curated content mt-64">
+    <Curated />
+  </div>
+
+  <div class="weekly content mt-64">
+    <Weekly />
+  </div>
+
+  <!--
   <div class="projects">
     <div class="content">
       <h2 class="white mt-2">
@@ -44,28 +56,37 @@
       </div>
     </div>
   </div>
+  -->
 
+  <!--
   <div>
     <Team />
   </div>
-
-  <div>
-    <Footer />
-  </div>
+   -->
 </template>
 
 <script>
-import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import Team from "../components/Team.vue";
-import Attributes from "../components/Attributes.vue";
+import Categories from "../components/Categories.vue";
+import Weekly from "../components/Weekly.vue";
+import Curated from "../components/Curated.vue";
+import Creator from "../components/Creator.vue";
 import ListView from "../components/ListView.vue";
 import getCollection from "../composables/getCollection";
 import getUser from "../composables/getUser";
 
 export default {
   name: "Home",
-  components: { ListView, Navbar, Attributes, Team, Footer },
+  components: {
+    ListView,
+    Categories,
+    Weekly,
+    Curated,
+    Team,
+    Footer,
+    Creator,
+  },
   setup() {
     //gets all posts made so far
     const { error, documents } = getCollection("posts");
@@ -88,7 +109,7 @@ export default {
 }
 */
 
-.attributes {
+.categories {
   margin-top: 6rem;
 }
 

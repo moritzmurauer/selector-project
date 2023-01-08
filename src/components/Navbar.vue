@@ -2,24 +2,39 @@
   <div class="mt-8">
     <nav>
       <div>
-        <h1><router-link :to="{ name: 'Home' }">Selector.</router-link></h1>
+        <router-link :to="{ name: 'Home' }"
+          ><h1 class="text-xl">Selector.</h1></router-link
+        >
       </div>
       <div class="flex">
         <p class="pr-8">
           <router-link :to="{ name: 'Home' }">Home</router-link>
         </p>
+        <p class="pr-8">
+          <router-link :to="{ name: 'Artworks' }">Posts</router-link>
+        </p>
         <p>
-          <router-link :to="{ name: 'Home' }">Projects</router-link>
+          <router-link :to="{ name: 'Explore' }">Artists</router-link>
         </p>
       </div>
       <div class="links">
         <div v-if="user">
           <router-link :to="{ name: 'CreatePost' }">Add new Post</router-link>
+          <router-link class="ml-4" :to="{ name: 'AddProfileInfo' }"
+            >Account</router-link
+          >
+
           <span>Hi there, {{ user.displayName }}</span>
+          <button class="btn-outline rounded-full ml-4" @click="handleClick">
+            Logout
+          </button>
         </div>
-        <div v-else>
+        <div class="flex" v-else>
+          <div class="mt-3 mr-4">
+            <router-link :to="{ name: 'Login' }">Login</router-link>
+          </div>
           <button class="btn-outline rounded-full">
-            Get in touch
+            <router-link :to="{ name: 'Signup' }">Register</router-link>
           </button>
         </div>
       </div>
@@ -34,12 +49,14 @@
     <div class="content modal-links">
       <button @click="closeModal" class="close">X</button>
       <router-link class="white" :to="{ name: 'Home' }">Home</router-link>
-      <router-link class="white" :to="{ name: 'Home' }">Projects</router-link>
+      <router-link class="white" :to="{ name: 'Explore' }"
+        >Projects</router-link
+      >
       <router-link class="white" :to="{ name: 'Home' }">Leistungen</router-link>
 
       <div v-if="user">
-        <router-link :to="{ name: 'CreatePost' }">Add new Post</router-link>
         <button @click="handleClick">Logout</button>
+        <router-link :to="{ name: 'CreatePost' }">Add new Art</router-link>
       </div>
       <div v-else></div>
     </div>
