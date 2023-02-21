@@ -3,14 +3,16 @@
   <div>
     <router-view :key="route.path" />
   </div>
+  <Footer />
 </template>
 
 <script>
 import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
 import { useRoute } from "vue-router";
 
 export default {
-  components: { Navbar },
+  components: { Navbar, Footer },
 
   setup() {
     const route = useRoute();
