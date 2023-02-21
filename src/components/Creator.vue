@@ -10,7 +10,7 @@
           vision come to reality!
         </p>
         <button class="btn-outline rounded-full mt-8">
-          find out more
+          <router-link :to="{ name: 'Contribute' }">find out more</router-link>
         </button>
       </div>
       <div class="mr-20">
