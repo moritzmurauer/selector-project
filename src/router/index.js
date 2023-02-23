@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Explore from "../views/Explore.vue";
+import Contribute from "../views/Contribute.vue";
 import Artworks from "../views/Artworks.vue";
 import Login from "../views/auth/Login.vue";
 import CreatePost from "../views/posts/CreatePost.vue";
@@ -51,6 +52,11 @@ const routes = [
     component: Explore,
   },
   {
+    path: "/contribute",
+    name: "Contribute",
+    component: Contribute,
+  },
+  {
     path: "/category/:id",
     name: "Category",
     component: Category,
@@ -70,7 +76,6 @@ const routes = [
     path: "/profile/:id",
     name: "UserPosts",
     component: UserPosts,
-    beforeEnter: requireAuth,
   },
   {
     path: "/profile/addInfo",
