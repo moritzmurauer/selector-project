@@ -1,39 +1,96 @@
 <template>
-  <div class="background-create mt-16">
+  <div class="background-create my-8">
     <form @submit.prevent="handleSubmit">
-      <h4>Create a New Post</h4>
+      <h4 class="text-center mb-3">Upload your art</h4>
+
+      <!-- upload Post image -->
+      <div
+        class="grid place-items-center border border-primary-300 mb-4 bg-white rounded-lg place-content-center p-2"
+      >
+        <label class="mb-2">Upload Post Cover Image</label>
+        <input type="file" class="mb-12" @change="handleChange" />
+        <div class="error">{{ fileError }}</div>
+      </div>
 
       <!-- text information -->
-      <input type="text" required placeholder="Post title" v-model="title" />
+      <label class="mb-1">Name</label>
+      <input
+        type="text"
+        required
+        placeholder="Name of your artwork..."
+        v-model="title"
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 pb-3 px-4 block w-full appearance-none leading-normal"
+      />
+
+      <label class="mb-1">Description</label>
       <textarea
         required
-        placeholder="Post description..."
+        placeholder="about the artwork..."
         v-model="description"
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 pb-3 px-4 block w-full appearance-none leading-normal"
       ></textarea>
+
+      <!-- price information -->
+      <label class="mb-1">price €</label>
+      <input
+        type="number"
+        required
+        placeholder="Price of your artwork in euro..."
+        v-model="price"
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 pb-3 px-4 block w-full appearance-none leading-normal"
+      />
+
+      <!-- Maße width -->
+      <label class="mb-1">width</label>
+      <input
+        type="number"
+        required
+        placeholder="width of your artwork in cm..."
+        v-model="height"
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 pb-3 px-4 block w-full appearance-none leading-normal"
+      />
+
+      <!-- Maße height -->
+      <label class="mb-1">height</label>
+      <input
+        type="number"
+        required
+        placeholder="height of your artwork in cm..."
+        v-model="width"
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 pb-3 px-4 block w-full appearance-none leading-normal"
+      />
 
       <!-- select category -->
       <div class="field mt-2 mb-2">
-        <h4>Please select a category</h4>
-        <select class="mb-1 mt-1 pl-3 p-3 pt-1 pb-1" v-model="selected">
+        <label class="mb-1">category</label>
+        <select
+          class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 pb-3 px-4 block w-full appearance-none leading-normal"
+          v-model="selected"
+        >
           <option value="" disabled selected>Select your option</option>
           <option
             selected="category?"
-            class="p-3"
+            class=""
             v-for="option in options"
             :key="option.value"
             >{{ option.text }}
           </option>
         </select>
-        <p>Category: {{ selected }}</p>
       </div>
 
-      <!-- upload Post image -->
-      <label>Upload Post Cover Image</label>
-      <input type="file" @change="handleChange" />
-      <div class="error">{{ fileError }}</div>
-
-      <button v-if="!isPending">Post</button>
-      <button v-else disabled>Saving...</button>
+      <button
+        class="btn-full w-full rounded-full mt-4 place-self-auto"
+        v-if="!isPending"
+      >
+        Post
+      </button>
+      <div v-else disabled class="w-full flex justify-center">
+        <span class="save-icon">
+          <span class="loader"></span>
+          <span class="loader"></span>
+          <span class="loader"></span>
+        </span>
+      </div>
     </form>
   </div>
 </template>
@@ -55,6 +112,9 @@ export default {
 
     const title = ref("");
     const description = ref("");
+    const price = ref("");
+    const height = ref("");
+    const width = ref("");
     const file = ref(null);
     const fileError = ref(null);
     const isPending = ref(false);
@@ -67,6 +127,9 @@ export default {
         const res = await addDoc({
           title: title.value,
           description: description.value,
+          price: price.value,
+          height: height.value,
+          width: width.value,
           userId: user.value.uid,
           userName: user.value.displayName,
           category: selected.value,
@@ -76,7 +139,7 @@ export default {
         });
         isPending.value = false;
         if (!error.value) {
-          router.push({ name: "Artworks", params: { id: res.id } });
+          router.push({ name: "PostDetail", params: { id: res.id } });
         }
       }
     };
@@ -86,6 +149,7 @@ export default {
       { text: "Photography", value: "A" },
       { text: "Illustration", value: "B" },
       { text: "Drawing", value: "C" },
+      { text: "diverse", value: "D" },
     ]);
 
     const selected = ref("");
@@ -110,6 +174,9 @@ export default {
     return {
       title,
       description,
+      price,
+      width,
+      height,
       handleSubmit,
       fileError,
       handleChange,
