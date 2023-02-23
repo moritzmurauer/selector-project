@@ -8,7 +8,7 @@ const error = ref(null);
 const isPending = ref(false);
 
 // Create a new User and sign him up with the input he filled in
-const signup = async (email, password, displayName, style) => {
+const signup = async (email, password, displayName, style, grid) => {
   error.value = null;
   isPending.value = true;
 
@@ -23,7 +23,7 @@ const signup = async (email, password, displayName, style) => {
     await projectFirestore
       .collection("users")
       .doc(res.user.uid)
-      .set({ style, displayName });
+      .set({ style, displayName, grid });
     await res.user.updateProfile({ displayName });
     error.value = null;
     isPending.value = false;
