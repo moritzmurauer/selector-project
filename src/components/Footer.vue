@@ -1,97 +1,67 @@
 <template>
-  <div class="footer">
-     <div class="content pt-4 pb-6">
-         <div class="d-flex align-items-center">
-             <h2 class="white mr-3"><span class="secondary">Kontaktieren</span> Sie uns! </h2>
-             <button class="mb-1">Nachricht versenden</button>
-         </div>
-         <hr class="mt-2">
-
-    <div class="footer-grid">
-         <div class="contact-info">
-             <div class="contact-grid align-items-center mt-2">
-                    <img class="mr-1" src="@/assets/icons/telefon.png" alt="telephone number">
-                    <p class="white">+49 1889288939</p>
-                </div>
-                 <div class="contact-grid align-items-center mt-2">
-                    <img class="mr-1" src="@/assets/icons/mail.png" alt="Innovatives unternehmen">
-                    <p class="white">info@kabelbau.de</p>
-                </div>
-                 <div class="contact-grid align-items-center mt-2">
-                    <img class="mr-1" src="@/assets/icons/map.png" alt="nachhaltiges unternehmen">
-                    <p class="white">Hans-Auer Str. 32, 80840 Cloppenburg</p>
-                </div> 
-         </div>
-
-        <div class="social-info">
-             <div class="social-grid align-items-center mt-2">
-                    <img class="mr-1" src="@/assets/icons/icons8-facebook.png" alt="telephone number">
-                    <p class="white">Facebook</p>
-                </div>
-                 <div class="social-grid align-items-center mt-2">
-                    <img class="mr-1" src="@/assets/icons/icons8-instagram.png" alt="Innovatives unternehmen">
-                    <p class="white">Instagram</p>
-                </div>
-                 <div class="social-grid align-items-center mt-2">
-                    <img class="mr-1" src="@/assets/icons/icons8-twitter.png" alt="nachhaltiges unternehmen">
-                    <p class="white">Twitter</p>
-                </div> 
-         </div>
-
-         </div>
-         <div class="mt-4">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2370.0772656940067!2d9.967612215726344!3d53.556388166658735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b18f6b16876c0d%3A0xe4547029b9726d08!2sSAE%20Institute%20Hamburg!5e0!3m2!1sen!2sde!4v1617286890204!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-         </div>
-
-         <p class="white mt-2">
-             ©2021 Walther Kabelbaufirma 
-         </p>
-         
-     </div>
-  </div>
+  <footer class="py-12 mt-24 w-full">
+    <div class="content mx-auto flex flex-wrap mt-6">
+      <div class="w-full md:w-1/4 text-center md:text-left">
+        <h4 class="mb-6">Links</h4>
+        <ul class="list-reset">
+          <li class="mb-3">
+            <router-link :to="{ name: 'Home' }">Home</router-link>
+          </li>
+          <li class="mb-3">
+            <router-link :to="{ name: 'Artworks' }">Artworks</router-link>
+          </li>
+          <li class="mb-3">
+            <router-link :to="{ name: 'Explore' }">Artists</router-link>
+          </li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/4 text-center md:text-left">
+        <h4 class="mb-6">Contact</h4>
+        <p class="text-sm ">
+          Talblick 7<br />
+          93152 Nittendorf, Germany <br />
+          (+49) 1766-8496549<br />
+          selector@gmail.com
+        </p>
+      </div>
+      <div class="w-full md:w-1/4 text-center md:text-left">
+        <h4 class=" mb-6">Follow Us</h4>
+        <ul class="list-reset">
+          <li class="mb-3">
+            <a class="" href="#">Facebook</a>
+          </li>
+          <li class="mb-3">
+            <a class="" href="#">Twitter</a>
+          </li>
+          <li class="mb-3">
+            <a class="" href="#">Instagram</a>
+          </li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/4 text-center md:text-left">
+        <h4 class="mb-6">About Us</h4>
+        <p class="text-sm ">
+          Selector a curated art platform and a portfolio manager for indonesian
+          based artists.
+        </p>
+      </div>
+    </div>
+    <div class="container mx-auto py-4">
+      <p class="text-center text-sm ">
+        Copyright &copy; {{ currentYear }} Selector
+      </p>
+    </div>
+  </footer>
 </template>
 
 <script>
 export default {
-
-}
+  data() {
+    return {
+      currentYear: new Date().getFullYear(),
+    };
+  },
+};
 </script>
 
-<style scoepd>
-    button {
-    margin: 0;
-    }
-
-    .footer {
-        background: var(--primary);
-    }
-
-    .footer-grid {
-        display: grid;
-    grid-template-columns: 1fr 1fr;
-    }
-
-    .contact-grid, .social-grid {
-    width: 300px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-  }
-
-  iframe {
-      
-      width: 100%;
-  }
-
-   @media only screen and (max-width: 600px) {
-   
-    .footer-grid {
-    display: block;
-    }
-  }
-
-  @media only screen and (max-width: 800px) {
-  h2, button {
-  margin-top: 2rem;
-  }
-  }
-</style>
+<style scoped></style>
