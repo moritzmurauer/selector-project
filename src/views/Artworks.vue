@@ -1,6 +1,7 @@
 <template>
   <!-- All posts with category selector -->
   <div class="home pt-2 mb-8">
+    <h1 class="text-3xl text-center mt-12">Explore The Collection.</h1>
     <div v-if="error" class="error">Could not fetch the data</div>
     <SelectCategory />
     <div v-if="artWorks">
