@@ -11,7 +11,7 @@
           <router-link :to="{ name: 'Home' }">Home</router-link>
         </p>
         <p class="pr-8">
-          <router-link :to="{ name: 'Artworks' }">Posts</router-link>
+          <router-link :to="{ name: 'Artworks' }">Artworks</router-link>
         </p>
         <p>
           <router-link :to="{ name: 'Explore' }">Artists</router-link>
@@ -19,13 +19,29 @@
       </div>
       <div class="links">
         <div v-if="user">
-          <router-link :to="{ name: 'CreatePost' }">Add new Post</router-link>
           <router-link class="ml-4" :to="{ name: 'AddProfileInfo' }"
             >Account</router-link
           >
+          <router-link
+            class="ml-4"
+            :to="{ name: 'UserPosts', params: { id: user.uid } }"
+          >
+            Profile
+          </router-link>
 
-          <span>Hi there, {{ user.displayName }}</span>
-          <button class="btn-outline rounded-full ml-4" @click="handleClick">
+          <button class="btn-full rounded-full ml-4">
+            <router-link class="flex" :to="{ name: 'CreatePost' }"
+              ><img
+                class="w-4 h-4 mt-1 mr-1"
+                src="@/assets/icons/icons8-plus.png"
+                alt="burger"
+              />Upload art</router-link
+            >
+          </button>
+          <button
+            class="btn-outline rounded-full ml-4 mb-2"
+            @click="handleClick"
+          >
             Logout
           </button>
         </div>
