@@ -6,13 +6,30 @@
           Handselected art from indonesian based artists.
         </h1>
         <p class="leading-relaxed">
-          An absolute random example of some text <br />
-          together to make it look like someone <br />
-          has written something meaningful already.
+          Journey Through Indonesia's Artistic Landscape with Our Handpicked
+          Collection of indonesias finest.
         </p>
         <div class="mt-8">
-          <button class="btn-full rounded-full mr-4 px-8">explore</button>
-          <button class="btn-outline rounded-full">contribute</button>
+          <button class="btn-full rounded-full mr-4 px-4">
+            <router-link :to="{ name: 'Artworks' }">
+              <div class="flex">
+                <p class="text-white">explore the collection</p>
+                <div class="cursor-pointer back-arrow">
+                  <svg
+                    width="20"
+                    height="20"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  >
+                    <path
+                      d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </router-link>
+          </button>
         </div>
       </div>
       <div>
@@ -29,13 +46,15 @@
     <Creator />
   </div>
 
-  <div class="curated content mt-64">
+  <div class="curated content mt-64 mb-64">
     <Curated />
   </div>
 
+  <!--
   <div class="weekly content mt-64">
     <Weekly />
   </div>
+  -->
 
   <!--
   <div class="projects">
@@ -67,7 +86,6 @@
 
 <script>
 import Footer from "../components/Footer.vue";
-import Team from "../components/Team.vue";
 import Categories from "../components/Categories.vue";
 import Weekly from "../components/Weekly.vue";
 import Curated from "../components/Curated.vue";
@@ -83,7 +101,6 @@ export default {
     Categories,
     Weekly,
     Curated,
-    Team,
     Footer,
     Creator,
   },
@@ -124,6 +141,16 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   margin-bottom: 5rem;
+}
+
+.back-arrow:hover svg {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-3px);
+}
+
+.back-arrow svg {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(3px), rotate(180);
 }
 
 @media only screen and (max-width: 1050px) {
