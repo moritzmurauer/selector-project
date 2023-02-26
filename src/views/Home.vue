@@ -10,20 +10,23 @@
           Collection of indonesias finest.
         </p>
         <div class="mt-8">
-          <button class="btn-full rounded-full mr-4 px-4">
+          <button
+            class="btn-full rounded-full mr-4 px-4 cursor-pointer back-arrow"
+          >
             <router-link :to="{ name: 'Artworks' }">
               <div class="flex">
-                <p class="text-white">explore the collection</p>
-                <div class="cursor-pointer back-arrow">
+                <p class="text-white">Start exploring</p>
+                <div class="">
                   <svg
-                    width="20"
-                    height="20"
                     xmlns="http://www.w3.org/2000/svg"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    viewBox="0 0 24 24"
+                    fill="#FFFFFF"
+                    width="24px"
+                    height="24px"
                   >
+                    <path d="M5 11.2h13v1.5H5z" />
                     <path
-                      d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+                      d="M18.3 11.3l-5.5-5.5c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4l4.8 4.8-4.8 4.8c-.4.4-.4 1 0 1.4.2.2.5.3.7.3s.5-.1.7-.3l5.5-5.5c.4-.4.4-1 0-1.4z"
                     />
                   </svg>
                 </div>
@@ -145,12 +148,12 @@ export default {
 
 .back-arrow:hover svg {
   transition: transform 0.3s ease-in-out;
-  transform: translateX(-3px);
+  transform: translateX(3px);
 }
 
 .back-arrow svg {
   transition: transform 0.3s ease-in-out;
-  transform: translateX(3px), rotate(180);
+  transform: translateX(-3px), rotate(180);
 }
 
 @media only screen and (max-width: 1050px) {
