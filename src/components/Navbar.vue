@@ -1,19 +1,29 @@
 <template>
   <div class="mt-8">
     <nav>
-      <div>
+      <div
+        class="hover:bg-gray-200 p-2 rounded transition duration-500 ease-in-out"
+      >
         <router-link :to="{ name: 'Home' }"
-          ><h1 class="text-xl">Selector.</h1></router-link
+          ><h1 class="text-xl">
+            Selector.
+          </h1></router-link
         >
       </div>
-      <div class="flex">
-        <p class="pr-8">
+      <div class="flex bg-none hover:bg-sky-700">
+        <p
+          class="mr-8 hover:bg-gray-200 p-2 rounded transition duration-500 ease-in-ou"
+        >
           <router-link :to="{ name: 'Home' }">Home</router-link>
         </p>
-        <p class="pr-8">
+        <p
+          class="mr-8 hover:bg-gray-200 p-2 rounded transition duration-500 ease-in-ou"
+        >
           <router-link :to="{ name: 'Artworks' }">Artworks</router-link>
         </p>
-        <p>
+        <p
+          class="hover:bg-gray-200 p-2 rounded transition duration-500 ease-in-ou"
+        >
           <router-link :to="{ name: 'Explore' }">Artists</router-link>
         </p>
       </div>
