@@ -12,7 +12,7 @@
           <router-link
             :to="{
               name: 'UserPosts',
-              params: { id: 'CKVQv2Fl1BeFS2qCSwSjNXxHeXF3' },
+              params: { id: 'pr7AV9iOzCSl2VcibFkEvZCfhLu1' },
             }"
           >
             <img src="@/assets/imgs/photography.png" alt="photography" />
@@ -26,7 +26,7 @@
           <router-link
             :to="{
               name: 'UserPosts',
-              params: { id: 'CKVQv2Fl1BeFS2qCSwSjNXxHeXF3' },
+              params: { id: 'pr7AV9iOzCSl2VcibFkEvZCfhLu1' },
             }"
           >
             <img src="@/assets/imgs/valia.png" alt="photography" />
@@ -40,7 +40,7 @@
           <router-link
             :to="{
               name: 'UserPosts',
-              params: { id: 'CKVQv2Fl1BeFS2qCSwSjNXxHeXF3' },
+              params: { id: 'pr7AV9iOzCSl2VcibFkEvZCfhLu1' },
             }"
           >
             <img src="@/assets/imgs/tony.png" alt="photography" />
@@ -54,7 +54,7 @@
           <router-link
             :to="{
               name: 'UserPosts',
-              params: { id: 'CKVQv2Fl1BeFS2qCSwSjNXxHeXF3' },
+              params: { id: 'pr7AV9iOzCSl2VcibFkEvZCfhLu1' },
             }"
           >
             <img src="@/assets/imgs/graphic.png" alt="photography" />

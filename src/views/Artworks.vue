@@ -7,8 +7,32 @@
     <div v-if="artWorks">
       <ListView :posts="artWorks" />
     </div>
-    <div class="content" v-else>
-      loading...
+    <div
+      class=" content mx-20px grid
+sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3  pt-8 gap-2"
+      v-else
+    >
+      <div class="thumbnail">
+        <div class="bg-gray-200 h-80 w-full"></div>
+      </div>
+      <div class="thumbnail">
+        <div class="bg-gray-200 h-80 w-full"></div>
+      </div>
+      <div class="thumbnail">
+        <div class="bg-gray-200 h-80 w-full"></div>
+      </div>
+      <div class="thumbnail">
+        <div class="bg-gray-200 h-80 w-full"></div>
+      </div>
+      <div class="thumbnail">
+        <div class="bg-gray-200 h-80 w-full"></div>
+      </div>
+      <div class="thumbnail">
+        <div class="bg-gray-200 h-80 w-full"></div>
+      </div>
+      <div class="thumbnail">
+        <div class="bg-gray-200 h-80 w-full"></div>
+      </div>
     </div>
   </div>
 </template>
